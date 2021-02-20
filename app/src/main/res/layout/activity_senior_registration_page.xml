@@ -4,49 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationPage">
+    tools:context=".SeniorRegistrationPage">
 
-    <TextView
-        android:id="@+id/textView"
+            <TextView
+        android:id="@+id/enter_your_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="I am a..."
+        android:text="Enter your..."
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/registration_senior_button"
+    <EditText
+        android:id="@+id/registration_senior_first_name_text"
         android:layout_width="268dp"
         android:layout_height="95dp"
-        android:layout_marginTop="52dp"
-        android:text="Senior"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="First name"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/enter_your_text" />
 
-    <Button
-        android:id="@+id/registration_caregiver_button"
-        android:layout_width="273dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="32dp"
-        android:text="Caregiver"
+    <EditText
+        android:id="@+id/registration_senior_last_name_text"
+        android:layout_width="268dp"
+        android:layout_height="95dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Last name"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registration_senior_button"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintTop_toBottomOf="@+id/registration_senior_first_name_text"
+        app:layout_constraintVertical_bias="0.223" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/registration_vertical_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

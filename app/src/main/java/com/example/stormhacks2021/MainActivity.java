@@ -12,12 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TO DO: SET THAT IF USER HAS NO PROFILE, SHOW THIS PAGE
+        //TO DO: SET THAT IF USER HAS NO PROFILE, SHOW REGISTRATION PAGE
 //        Boolean isFirstRun = //CHECK IF PROFILE EXISTS
 //
 //        if (isFirstRun) {
 //            //show sign up activity
-//            startActivity(new Intent(MainActivity.this, RegistrationPage.class));
+//              startActivity(new Intent(MainActivity.this, RegistrationPage.class));
 //        }
     }
 }
