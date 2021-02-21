@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SeniorProfilePage extends AppCompatActivity {
@@ -18,17 +19,22 @@ public class SeniorProfilePage extends AppCompatActivity {
         setContentView(R.layout.activity_senior_profile_page);
 
         appManager = AppManager.getInstance();
-
-        String seniorName = "invalid profile";
+        Senior senior;
 
         Intent intent = getIntent();
         int patientPosition = intent.getIntExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), -1);
 
-        if (patientPosition != -1){
-            seniorName = appManager.getSeniors().get(patientPosition).getFirstName() + " " + appManager.getSeniors().get(patientPosition).getLastName();
-        }
+        senior = appManager.getSeniors().get(patientPosition);
 
         TextView name = findViewById(R.id.senior_profile_name_textview);
+        String seniorName = senior.getFirstName() + " " + senior.getLastName();
         name.setText(seniorName);
+
+        TextView age = findViewById(R.id.senior_profile_age_text);
+        String seniorAge = Integer.toString(senior.getAge());
+        age.setText(seniorAge);
+
+        ImageView image = findViewById(R.id.senior_profile_picture_image);
+        image.setBackgroundResource(senior.getProfilePicture());
     }
 }
