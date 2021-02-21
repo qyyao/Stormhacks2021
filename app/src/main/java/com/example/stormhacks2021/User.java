@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import java.util.Random;
 
-public class User implements Parcelable {
+public class User {
 
     String firstName;
     String lastName;
@@ -18,24 +18,6 @@ public class User implements Parcelable {
         this.lastName = lastName;
         this.ID_num = ID;
     }
-
-    protected User(Parcel in) {
-        firstName = in.readString();
-        lastName = in.readString();
-        ID_num = in.readInt();
-    }
-
-    public static final Creator<User> CREATOR = new Creator<User>() {
-        @Override
-        public User createFromParcel(Parcel in) {
-            return new User(in);
-        }
-
-        @Override
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
 
     public String getFirstName() {
         return firstName;
@@ -61,15 +43,4 @@ public class User implements Parcelable {
         this.ID_num = ID_num;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(firstName);
-        dest.writeString(lastName);
-        dest.writeInt(ID_num);
-    }
 }
