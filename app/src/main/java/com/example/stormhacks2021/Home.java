@@ -58,6 +58,9 @@ public class Home extends AppCompatActivity {
             greeting = "Good Evening";
         }
 
+        if(appManager.getCurrentSenior() != null){
+            greeting = greeting + " " + appManager.getCurrentSenior().getFirstName();
+        }
         greetingText.setText(greeting);
 
 
@@ -66,6 +69,30 @@ public class Home extends AppCompatActivity {
         setUpContactBtn();
         setUp911Btn();
         setUpSettingsBtn();
+        if(appManager.getCurrentSenior() != null){
+            updateNotificationsBox();
+        }
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(appManager.getCurrentSenior() != null){
+            updateNotificationsBox();
+        }
+    }
+    private void updateNotificationsBox() {
+        TextView notifBox = findViewById(R.id.home_interface_txt);
+        notifBox.setText("");
+        int medicCounter = 0;
+        for(int i = 0 ; i < appManager.getCurrentSenior().getMedicationTracker().size() ; i++){
+            if(!appManager.getCurrentSenior().getMedicationTracker().get(i).getIfTaken()){
+                medicCounter++;
+            }
+        }
+        String notifText = "You have " + medicCounter + " medications left to take";
+        String currText = "Notifications: " + "\n" + notifText;
+        notifBox.setText(currText);
 
     }
 
@@ -81,6 +108,9 @@ public class Home extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         printSeniors();
+        if(appManager.getCurrentSenior() != null){
+            updateNotificationsBox();
+        }
     }
 
     private void printSeniors() {
