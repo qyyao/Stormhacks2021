@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.widget.ImageView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +66,19 @@ public class AppManager {
         seniors.add(new Senior("Alexandra", "Smith"));
         seniors.get(8).setAge(66);
         seniors.get(8).setProfilePicture(R.drawable.pp9);
+
+        addMedicationsList();
+    }
+
+    private void addMedicationsList() {
+        ArrayList<Medication> medications0 = new ArrayList<>();
+        medications0.add(new Medication("Fluoxetine", false, false, false, false, false, 4, false ));
+        medications0.add(new Medication("apple", false, false, false, false, false, 4, true ));
+        medications0.add(new Medication("fds", false, false, false, false, false, 4, false ));
+        medications0.add(new Medication("fds", false, false, false, false, false, 4, false ));
+        medications0.add(new Medication("f", false, false, false, false, false, 4, false ));
+        seniors.get(0).setMedicationTracker(medications0);
+
     }
 
     public static AppManager getInstance(){
