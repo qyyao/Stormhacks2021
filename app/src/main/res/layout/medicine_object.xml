@@ -7,20 +7,21 @@
 
     <TextView
         android:id="@+id/medication_name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
         android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
         android:text="TextView"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medication_check_image" />
 
     <ImageView
         android:id="@+id/medication_check_image"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
