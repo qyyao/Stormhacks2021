@@ -24,6 +24,7 @@ public class Home extends AppCompatActivity {
 
         appManager = AppManager.getInstance();
 
+
 //        CareGiver sue = new CareGiver("Sue", "Lan");
 //        System.out.println(sue.getID_num());
 //        Senior s1 = new Senior("Johnny", "Swan");
