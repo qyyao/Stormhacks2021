@@ -43,7 +43,7 @@ public class ProfilePage extends AppCompatActivity {
         age.setText(seniorAge);
 
         ImageView image = findViewById(R.id.senior_profile_picture_image);
-        image.setBackgroundResource(senior.getProfilePicture());
+                image.setBackgroundResource(senior.getProfilePicture());
 
         if (senior.getMedicationTracker() != null) {
 
