@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Stormhacks 2021</string>
-    <string name="home_emergency_txt">911</string>
+    <string name="home_emergency_txt">EMERGENCY</string>
     <string name="home_interface_txt">Interface</string>
     <string name="home_contact_family_txt">Contact Family</string>
-    <string name="home_medication_txt">I took my medication</string>
-    <string name="home_help_txt">I need help!</string>
+    <string name="home_medication_txt">Medication</string>
+    <string name="home_help_txt">Request Assistance</string>
     <string name="SENIOR_PROFILE_POSITION">selected_senior_position</string>
     <string name="contact_list">Contact List</string>
 </resources>
