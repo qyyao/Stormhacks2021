@@ -25,20 +25,20 @@
         android:layout_marginTop="84dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="First name"
+        android:hint="First name"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_your_text" />
 
-    <EditText
+        <EditText
         android:id="@+id/registration_senior_last_name_text"
         android:layout_width="268dp"
         android:layout_height="95dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Last name"
+        android:hint="Last name"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
