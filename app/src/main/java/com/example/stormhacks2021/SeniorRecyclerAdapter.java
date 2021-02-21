@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+
 public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAdapter.MyViewHolder> {
     private List<Senior> seniorsList;
     private SeniorRecyclerViewClickListener listener;
@@ -26,11 +29,14 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView seniorName;
         private TextView notificationsNumber;
+        private ImageView profilePicture;
 
         public MyViewHolder(final View view){
             super(view);
             seniorName = view.findViewById(R.id.senior_name_text);
             notificationsNumber = view.findViewById(R.id.senior_notif_number_txt);
+            profilePicture = (ImageView) view.findViewById(R.id.recycler_circle_img);
+
             view.setOnClickListener(this);
         }
 
@@ -55,6 +61,8 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
         if(seniorsList.get(position).getNumNotifications() > 0){
             holder.notificationsNumber.setText(notifNumber);
         }
+
+        holder.profilePicture.setBackgroundResource(seniorsList.get(position).getProfilePicture());
     }
 
     @Override
