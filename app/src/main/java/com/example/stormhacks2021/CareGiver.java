@@ -11,7 +11,6 @@ public class CareGiver extends User{
     public CareGiver(String firstName, String lastName) {
         super(firstName, lastName);
         appManager = AppManager.getInstance();
-        seniors = appManager.getSeniors();
     }
 
     public List<Senior> getSeniors() {
@@ -24,16 +23,6 @@ public class CareGiver extends User{
 
     public void addSenior(Senior senior){
         seniors.add(senior);
-    }
-
-    public void printSeniorsInformation(){
-        for(int i = 0 ; i < seniors.size(); i++){
-            System.out.println(
-                            "Senior " + i + ": " +
-                            seniors.get(i).getFirstName() +
-                            " " + seniors.get(i).getLastName() +
-                            " " + seniors.get(i).getID_num());
-        }
     }
 
 }
