@@ -9,10 +9,14 @@ import android.widget.Button;
 
 public class RegistrationPage extends AppCompatActivity {
 
+    AppManager appManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
+
+        appManager = AppManager.getInstance();
 
         Button seniorButton = findViewById(R.id.registration_senior_button);
         Button caregiverButton = findViewById(R.id.registration_caregiver_button);
@@ -21,8 +25,13 @@ public class RegistrationPage extends AppCompatActivity {
         seniorButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(RegistrationPage.this, SeniorRegistrationPage.class);
-                startActivity(intent);
+                if(appManager.isFirstRun()) {
+                    Intent intent = new Intent(RegistrationPage.this, SeniorRegistrationPage.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(RegistrationPage.this, Home.class);
+                    startActivity(intent);
+                }
             }
         });
 
