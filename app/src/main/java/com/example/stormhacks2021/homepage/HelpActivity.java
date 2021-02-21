@@ -4,8 +4,14 @@ import com.example.stormhacks2021.R;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +22,7 @@ public class HelpActivity extends AppCompatActivity {
 
     AppManager appManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +31,11 @@ public class HelpActivity extends AppCompatActivity {
         appManager = AppManager.getInstance();
 
         setUpButtons();
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("My Notification","Alerts", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
     }
 
     private void setUpButtons() {
@@ -38,6 +50,17 @@ public class HelpActivity extends AppCompatActivity {
                 appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is hungry");
 
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+                //Notification Code Below
+                NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
+                builder.setContentTitle("Alert!");
+                String name = appManager.getCurrentSenior().getFirstName();
+                builder.setContentTitle(name + " is hungry!");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
+                managerCompat.notify(1,builder.build());
+                //Notification Code Finished
 
                 alertDialog.setTitle("Help is on the way!");
 
@@ -66,6 +89,17 @@ public class HelpActivity extends AppCompatActivity {
                 appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is thirsty");
 
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+                //Notification Code Below
+                NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
+                builder.setContentTitle("Alert!");
+                String name = appManager.getCurrentSenior().getFirstName();
+                builder.setContentTitle(name + " is thirsty!");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
+                managerCompat.notify(1,builder.build());
+                //Notification Code Finished
 
                 alertDialog.setTitle("Help is on the way!");
 
@@ -94,7 +128,17 @@ public class HelpActivity extends AppCompatActivity {
                 appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is lonely");
 
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+                //Notification Code Below
+                NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
+                builder.setContentTitle("Alert!");
+                String name = appManager.getCurrentSenior().getFirstName();
+                builder.setContentTitle(name + " is lonely.");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
 
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
+                managerCompat.notify(1,builder.build());
+                //Notification Code Complete
                 alertDialog.setTitle("Help is on the way!");
 
                 alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
@@ -122,7 +166,17 @@ public class HelpActivity extends AppCompatActivity {
                 appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is injured");
 
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+                //Notification Code Below
+                NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
+                builder.setContentTitle("Alert!");
+                String name = appManager.getCurrentSenior().getFirstName();
+                builder.setContentTitle(name + " is injured!");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
 
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
+                managerCompat.notify(1,builder.build());
+                //Notification Code Complete
                 alertDialog.setTitle("Help is on the way!");
 
                 alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
