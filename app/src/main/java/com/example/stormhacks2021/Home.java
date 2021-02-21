@@ -2,6 +2,7 @@ package com.example.stormhacks2021;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class Home extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class Home extends AppCompatActivity {
 //
 //        if (isFirstRun) {
 //            //show sign up activity
-//              startActivity(new Intent(MainActivity.this, RegistrationPage.class));
+              startActivity(new Intent(Home.this, RegistrationPage.class));
 //        }
 
         appManager = AppManager.getInstance();

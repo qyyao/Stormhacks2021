@@ -26,6 +26,4 @@ public class AppManager {
     public void setSeniors(List<Senior> seniors) {
         this.seniors = seniors;
     }
-
-
 }
