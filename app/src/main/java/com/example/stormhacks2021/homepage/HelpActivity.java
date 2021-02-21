@@ -50,7 +50,7 @@ public class HelpActivity extends AppCompatActivity {
                 appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is hungry");
 
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
-                //test code below
+                //Notification Code Below
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
                 builder.setContentTitle("Alert!");
                 String name = appManager.getCurrentSenior().getFirstName();
@@ -60,7 +60,7 @@ public class HelpActivity extends AppCompatActivity {
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
                 managerCompat.notify(1,builder.build());
-                //test code done
+                //Notification Code Finished
 
                 alertDialog.setTitle("Help is on the way!");
 
@@ -89,7 +89,7 @@ public class HelpActivity extends AppCompatActivity {
                 appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is thirsty");
 
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
-                //test code below
+                //Notification Code Below
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
                 builder.setContentTitle("Alert!");
                 String name = appManager.getCurrentSenior().getFirstName();
@@ -99,7 +99,7 @@ public class HelpActivity extends AppCompatActivity {
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
                 managerCompat.notify(1,builder.build());
-                //test code done
+                //Notification Code Finished
 
                 alertDialog.setTitle("Help is on the way!");
 
