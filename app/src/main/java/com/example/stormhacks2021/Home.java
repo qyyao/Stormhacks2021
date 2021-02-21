@@ -158,8 +158,7 @@ public class Home extends AppCompatActivity {
                 alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        moveTaskToBack(false);
-                        finish();
+                        dialog.dismiss();
                     }
                 });
                 alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -11,12 +11,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="I am a..."
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:text="One Step Connect"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
         android:textSize="40sp"
-        android:layout_marginLeft="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/registration_vertical_guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,5 +67,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.78" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="135dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/registration_senior_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="@+id/registration_vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/footsteps" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
