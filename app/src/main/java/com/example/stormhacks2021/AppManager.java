@@ -31,6 +31,7 @@ public class AppManager {
     }
 
     private void setSeniorList() {
+
         seniors = new ArrayList<>();
         seniors.add(new Senior("Adam", "Apple"));
         seniors.get(0).setAge(65);
@@ -68,18 +69,6 @@ public class AppManager {
         seniors.get(8).setAge(66);
         seniors.get(8).setProfilePicture(R.drawable.pp9);
 
-        addMedicationsList();
-    }
-
-    private void addMedicationsList() {
-        ArrayList<Medication> medications0 = new ArrayList<>();
-        medications0.add(new Medication("Fluoxetine", false, false, false, false, false, 4, false ));
-        medications0.add(new Medication("apple", false, false, false, false, false, 4, true ));
-        medications0.add(new Medication("fds", false, false, false, false, false, 4, false ));
-        medications0.add(new Medication("fds", false, false, false, false, false, 4, false ));
-        medications0.add(new Medication("f", false, false, false, false, false, 4, false ));
-        seniors.get(0).setMedicationTracker(medications0);
-
     }
 
     public static AppManager getInstance(){
@@ -89,6 +78,16 @@ public class AppManager {
             mainCareGiver = new CareGiver("Jane", "Smith");
         }
         return instance;
+    }
+
+    public void addMedicationsList() {
+        ArrayList<Medication> medications0 = new ArrayList<>();
+        medications0.add(new Medication("Aspirin", false, false, false, false, false, 4, false ));
+        medications0.add(new Medication("Sertraline", false, false, false, false, false, 4, true ));
+        medications0.add(new Medication("Insulin", false, false, false, false, false, 4, false ));
+        medications0.add(new Medication("Seroquel", false, false, false, false, false, 4, false ));
+        medications0.add(new Medication("Nasal Drops", false, false, false, false, false, 4, false ));
+        currentSenior.setMedicationTracker(medications0);
     }
 
     public List<Senior> getSeniors() {

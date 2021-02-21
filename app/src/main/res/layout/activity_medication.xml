@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Seroquel"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/medication_submit_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +31,11 @@
         app:layout_constraintVertical_bias="0.505" />
 
     <CheckBox
-        android:id="@+id/med6"
+        android:id="@+id/med4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nasal Drop"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/medication_submit_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toEndOf="@+id/med5"
@@ -87,7 +87,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Night Medications"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/medication_submit_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,10 +109,11 @@
         app:layout_constraintVertical_bias="0.773" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/medication_submit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Complete"
+        android:text="COMPLETE"
+        app:backgroundTint="#2F80EC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

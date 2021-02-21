@@ -47,6 +47,8 @@ public class HelpActivity extends AppCompatActivity {
         hungryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is hungry");
+
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
                 //test code below
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
@@ -84,6 +86,8 @@ public class HelpActivity extends AppCompatActivity {
         thirstyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is thirsty");
+
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
                 //test code below
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
@@ -121,6 +125,8 @@ public class HelpActivity extends AppCompatActivity {
         lonelyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is lonely");
+
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
                 //Notification Code Below
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
@@ -157,6 +163,8 @@ public class HelpActivity extends AppCompatActivity {
         injuredButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is injured");
+
                 final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
                 //Notification Code Below
                 NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
