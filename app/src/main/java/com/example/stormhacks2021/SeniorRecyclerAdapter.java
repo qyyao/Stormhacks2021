@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 
 public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAdapter.MyViewHolder> {
     private List<Senior> seniorsList;
@@ -63,7 +61,7 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
             holder.notificationsNumber.setText(notifNumber);
         }
 
-        holder.profilePicture.setBackgroundResource(seniorsList.get(position).getProfilePicture());
+        holder.profilePicture.setImageResource(seniorsList.get(position).getProfilePicture());
     }
 
     @Override

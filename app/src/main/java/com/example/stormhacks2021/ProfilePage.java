@@ -14,8 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class ProfilePage extends AppCompatActivity {
 
     private AppManager appManager;
