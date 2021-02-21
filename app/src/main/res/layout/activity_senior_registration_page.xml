@@ -4,58 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeniorRegistrationPage">
+    tools:context=".SeniorRegistrationPage"
+    android:background="@drawable/background_neutral">
 
     <TextView
         android:id="@+id/enter_your_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
         android:text="Enter your..."
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horiz_20" />
 
     <EditText
         android:id="@+id/registration_senior_first_name_text"
         android:layout_width="268dp"
         android:layout_height="95dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="First name"
+        android:inputType="textPersonName"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enter_your_text" />
 
-        <EditText
+    <EditText
         android:id="@+id/registration_senior_last_name_text"
         android:layout_width="268dp"
         android:layout_height="95dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Last name"
+        android:inputType="textPersonName"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registration_senior_first_name_text"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <Button
         android:id="@+id/registration_senior_submit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SUBMIT"
+        android:textSize="24sp"
+        app:backgroundTint="#2F80EC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registration_senior_last_name_text" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horiz_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <EditText
+        android:id="@+id/registration_senior_age_txt"
+        android:layout_width="268dp"
+        android:layout_height="95dp"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="3"
+        android:hint="Your age"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_senior_last_name_text"
+        app:layout_constraintVertical_bias="0.055" />
 </androidx.constraintlayout.widget.ConstraintLayout>

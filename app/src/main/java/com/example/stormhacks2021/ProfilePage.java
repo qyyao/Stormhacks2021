@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ProfilePage extends AppCompatActivity {
@@ -16,6 +18,8 @@ public class ProfilePage extends AppCompatActivity {
     private RecyclerView medicineRecyclerView;
     private Senior senior;
 
+    private ArrayAdapter<String> notificationsAdapter;
+    int patientPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +30,11 @@ public class ProfilePage extends AppCompatActivity {
         appManager = AppManager.getInstance();
 
         Intent intent = getIntent();
-        int patientPosition = intent.getIntExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), -1);
+        patientPosition = intent.getIntExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), -1);
 
         senior = appManager.getSeniors().get(patientPosition);
 
-        TextView name = findViewById(R.id.senior_profile_name_textview);
+        TextView name = findViewById(R.id.senior_profile_name_txt);
         String seniorName = senior.getFirstName() + " " + senior.getLastName();
         name.setText(seniorName);
 
@@ -44,6 +48,7 @@ public class ProfilePage extends AppCompatActivity {
         if (senior.getMedicationTracker() != null) {
             setAdapter();
         }
+        populateNotificationsList();
     }
 
     private void setAdapter() {
@@ -53,4 +58,11 @@ public class ProfilePage extends AppCompatActivity {
         medicineRecyclerView.setItemAnimator(new DefaultItemAnimator());
         medicineRecyclerView.setAdapter(medicineRecyclerAdapter);
     }
+
+    private void populateNotificationsList() {
+        ListView list = findViewById(R.id.senior_profile_notif_list);
+        notificationsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, appManager.getSeniors().get(patientPosition).getCareGiverNotifications());
+        list.setAdapter(notificationsAdapter);
+    }
+
 }

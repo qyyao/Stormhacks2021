@@ -16,6 +16,7 @@ public class AppManager {
     private static AppManager instance;
     private Senior currentSenior;
     private static CareGiver mainCareGiver;
+    private List<String> careGiverNotifications;
     private boolean isFirstRun;
 
     private AppManager(){
@@ -131,4 +132,5 @@ public class AppManager {
                             " " + seniors.get(i).getID_num());
         }
     }
+
 }
