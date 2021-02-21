@@ -1,7 +1,11 @@
 package com.example.stormhacks2021;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -100,7 +104,44 @@ public class Home extends AppCompatActivity {
     }
 
     private void setUp911Btn() {
-        // TODO: 2021-02-20 SET UP ALERT
+        Button emergencyButton = findViewById(R.id.home_emergency_btn);
+
+        emergencyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(Home.this);
+                //Notification Code Below
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(Home.this, "My Notification");
+                builder.setContentTitle("Alert!");
+                String name = appManager.getCurrentSenior().getFirstName();
+                builder.setContentTitle(name + " is in an emergency!");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Home.this);
+                managerCompat.notify(1, builder.build());
+                //Notification Code Finished
+
+                alertDialog.setTitle("Help is on the way!");
+
+                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(false);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog1 = alertDialog.create();
+                alertDialog1.show();
+            }
+        });
     }
 
     private void setUpContactBtn() {
