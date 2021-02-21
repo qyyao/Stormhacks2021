@@ -43,4 +43,5 @@ public class RegistrationPage extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -51,6 +51,8 @@ public class ProfilePage extends AppCompatActivity {
             setAdapter();
         }
         populateNotificationsList();
+        
+     //   onClickDelete();
     }
 
     private void setAdapter() {
