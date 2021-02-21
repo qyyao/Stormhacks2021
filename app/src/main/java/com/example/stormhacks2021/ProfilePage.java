@@ -46,6 +46,7 @@ public class ProfilePage extends AppCompatActivity {
         image.setBackgroundResource(senior.getProfilePicture());
 
         if (senior.getMedicationTracker() != null) {
+
             setAdapter();
         }
         populateNotificationsList();
