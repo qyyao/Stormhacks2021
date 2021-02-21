@@ -11,6 +11,10 @@
         android:theme="@style/Theme.Stormhacks2021">
         <activity android:name=".SeniorProfilePage"></activity>
         <activity android:name=".SeniorsListPage" />
+        <activity android:name=".homepage.SettingsActivity"></activity>
+        <activity android:name=".homepage.ContactActivity" />
+        <activity android:name=".homepage.MedicationActivity" />
+        <activity android:name=".homepage.HelpActivity" />
         <activity android:name=".SeniorRegistrationPage" />
         <activity android:name=".RegistrationPage" />
         <activity android:name=".Home">
