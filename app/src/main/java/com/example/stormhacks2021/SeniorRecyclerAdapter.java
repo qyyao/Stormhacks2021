@@ -52,6 +52,7 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
         String name = seniorsList.get(position).getFirstName() + " " + seniorsList.get(position).getLastName();
         String notifNumber = String.valueOf(seniorsList.get(position).getNumNotifications());
         holder.seniorName.setText(name);
+        System.out.println("NAME & NOTIF NUM: " + name + " " + notifNumber);
         if(seniorsList.get(position).getNumNotifications() > 0){
             holder.notificationsNumber.setText(notifNumber);
         }

@@ -30,6 +30,8 @@ public class Home extends AppCompatActivity {
         //TO DO: SET THAT IF USER HAS NO PROFILE, SHOW REGISTRATION PAGE
         //Boolean isFirstRun = //CHECK IF PROFILE EXISTS
         appManager = AppManager.getInstance();
+        appManager.addMedicationsList();
+
         if (appManager.isFirstRun()) {
           //show sign up activity
               startActivity(new Intent(Home.this, RegistrationPage.class));
