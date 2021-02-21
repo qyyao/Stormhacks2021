@@ -1,15 +1,21 @@
 package com.example.stormhacks2021.homepage;
 import com.example.stormhacks2021.AppManager;
 import com.example.stormhacks2021.R;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class HelpActivity extends AppCompatActivity {
 
-    AppManager appManager ;
+    private Button button;
+
+    AppManager appManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +35,51 @@ public class HelpActivity extends AppCompatActivity {
         hungryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is hungry");
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+
+                alertDialog.setTitle("Help is on the way!");
+
+                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(false);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog1 = alertDialog.create();
+                alertDialog1.show();
+
             }
         });
 
         thirstyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is thirsty");
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+
+                alertDialog.setTitle("Help is on the way!");
+
+                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(false);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog1 = alertDialog.create();
+                alertDialog1.show();
 
             }
         });
@@ -44,14 +87,52 @@ public class HelpActivity extends AppCompatActivity {
         lonelyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is lonely");
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+
+                alertDialog.setTitle("Help is on the way!");
+
+                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(false);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog1 = alertDialog.create();
+                alertDialog1.show();
+
             }
         });
 
         injuredButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " is injured");
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+
+                alertDialog.setTitle("Help is on the way!");
+
+                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(false);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog1 = alertDialog.create();
+                alertDialog1.show();
+
             }
         });
 
