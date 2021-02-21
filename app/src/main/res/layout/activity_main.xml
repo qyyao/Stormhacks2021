@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horiz_40" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_horiz_20" />
 
     <Button
         android:id="@+id/home_medication_btn"
@@ -115,7 +115,7 @@
         app:layout_constraintGuide_percent="0.78" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horiz_40"
+        android:id="@+id/guideline_horiz_20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

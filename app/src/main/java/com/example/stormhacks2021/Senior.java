@@ -1,5 +1,8 @@
 package com.example.stormhacks2021;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.widget.ImageView;
@@ -9,19 +12,22 @@ import java.util.Map;
 
 public class Senior extends User {
 
-    public Senior(String firstName, String lastName){
-        super(firstName, lastName);
-
-    }
-
     int age;
     int profilePicture;
     Map<String, Boolean> medicationTracker;
+    boolean tookMedication;
     boolean checkBloodPressure;
     boolean calledFamily;
     boolean ateBreakfast;
     boolean ateDinner;
     boolean ateLunch;
+    int numNotifications;
+    private List<String> careGiverNotifications;
+
+    public Senior(String firstName, String lastName){
+        super(firstName, lastName);
+        careGiverNotifications = new ArrayList<>();
+    }
 
     public void setAge(int age){
         this.age = age;
@@ -85,6 +91,24 @@ public class Senior extends User {
 
     public void setAteLunch(boolean ateLunch) {
         this.ateLunch = ateLunch;
+    }
+
+    public int getNumNotifications() {
+        System.out.print("GET NUM NOTIF: " + getCareGiverNotifications().size());
+        numNotifications = careGiverNotifications.size();
+        return numNotifications;
+    }
+
+    public void setNumNotifications(int numNotifications) {
+        this.numNotifications = numNotifications;
+    }
+
+    public void notifyCareGiver(String message){
+        careGiverNotifications.add(message);
+    }
+
+    public List<String> getCareGiverNotifications(){
+        return careGiverNotifications;
     }
 
 }

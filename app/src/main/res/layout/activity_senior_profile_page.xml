@@ -8,8 +8,8 @@
     android:background="@drawable/background_senior_profile">
 
     <TextView
-        android:id="@+id/senior_profile_name_textview"
-        android:layout_width="wrap_content"
+        android:id="@+id/senior_profile_name_txt"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
@@ -17,7 +17,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -77,4 +77,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_age_text" />
 
+
+    <TextView
+        android:id="@+id/senior_profile_notif_title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notifications:"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horiz_20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horiz_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horiz_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <ListView
+        android:id="@+id/senior_profile_notif_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded"
+        android:text="TextView"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horiz_70"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toBottomOf="@+id/senior_profile_notif_title_txt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
