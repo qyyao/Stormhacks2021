@@ -63,7 +63,7 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
             holder.notificationsNumber.setText(notifNumber);
         }
 
-        holder.profilePicture.setBackgroundResource(seniorsList.get(position).getProfilePicture());
+        holder.profilePicture.setImageResource(seniorsList.get(position).getProfilePicture());
     }
 
     @Override
