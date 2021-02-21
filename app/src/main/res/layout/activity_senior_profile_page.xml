@@ -24,7 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/senior_profile_picture_image"
         android:layout_width="120dp"
@@ -38,7 +37,8 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_name_txt"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/senior_profile_age_text"
@@ -57,11 +57,10 @@
         android:id="@+id/medication_recycler_view"
         android:layout_width="0dp"
         android:layout_height="106dp"
-        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/senior_profile_notif_title_txt"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_0.9"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vert_0.1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
         app:layout_constraintTop_toBottomOf="@+id/medications" />
 
     <TextView
@@ -92,14 +91,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.20" />
+        app:layout_constraintGuide_percent="0.13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vert_80"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintGuide_percent="0.87" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horiz_20"
@@ -115,20 +114,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.90" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vert_0.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vert_0.9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
-
     <ListView
         android:id="@+id/senior_profile_notif_list"
         android:layout_width="0dp"
@@ -141,17 +126,24 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_notif_title_txt" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vert_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/circle_img"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/senior_profile_name_txt"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#2F80EC"
+        tools:ignore="MissingConstraints"
+        />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vert_93"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
