@@ -14,12 +14,22 @@ public class AppManager {
     private AppManager(){
         seniors = new ArrayList<>();
 
+        seniors.add(new Senior("John1", "Smith1"));
+        seniors.add(new Senior("John2", "Smith2"));
+        seniors.add(new Senior("John3", "Smith3"));
+        seniors.add(new Senior("John4", "Smith4"));
+        seniors.add(new Senior("John5", "Smith5"));
+        seniors.add(new Senior("John6", "Smith6"));
+        seniors.add(new Senior("John7", "Smith7"));
+        seniors.add(new Senior("John8", "Smith8"));
+        seniors.add(new Senior("John9", "Smith9"));
+        seniors.add(new Senior("John10", "Smith10"));
+
         if(instance != null){
             isFirstRun = false;
         }else{
             isFirstRun = true;
         }
-
     }
 
     public static AppManager getInstance(){

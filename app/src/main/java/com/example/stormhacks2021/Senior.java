@@ -1,6 +1,6 @@
 package com.example.stormhacks2021;
 
-public class Senior extends User{
+public class Senior extends User {
 
     public Senior(String firstName, String lastName){
         super(firstName, lastName);

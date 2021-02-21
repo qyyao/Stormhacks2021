@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Stormhacks2021">
+        <activity android:name=".SeniorProfilePage"></activity>
+        <activity android:name=".SeniorsListPage" />
         <activity android:name=".homepage.SettingsActivity"></activity>
         <activity android:name=".homepage.ContactActivity" />
         <activity android:name=".homepage.MedicationActivity" />
