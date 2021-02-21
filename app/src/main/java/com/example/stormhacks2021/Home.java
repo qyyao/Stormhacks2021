@@ -1,19 +1,14 @@
 package com.example.stormhacks2021;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-
 import com.example.stormhacks2021.homepage.ContactActivity;
 import com.example.stormhacks2021.homepage.HelpActivity;
 import com.example.stormhacks2021.homepage.MedicationActivity;
-import com.example.stormhacks2021.homepage.SettingsActivity;
 
 public class Home extends AppCompatActivity {
 
@@ -25,7 +20,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //TO DO: SET THAT IF USER HAS NO PROFILE, SHOW REGISTRATION PAGE
-//        Boolean isFirstRun = //CHECK IF PROFILE EXISTS
+        //Boolean isFirstRun = //CHECK IF PROFILE EXISTS
         appManager = AppManager.getInstance();
         if (appManager.isFirstRun()) {
           //show sign up activity

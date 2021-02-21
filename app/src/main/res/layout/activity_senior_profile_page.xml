@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/senior_profile_name_textview"
+        app:layout_constraintTop_toBottomOf="@+id/senior_profile_name_txt"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -54,15 +54,14 @@
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_picture_image" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="413dp"
-        android:layout_height="106dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="77dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/senior_profile_age_text"
-        app:layout_constraintVertical_bias="0.146" />
+        app:layout_constraintBottom_toTopOf="@+id/senior_profile_notif_title_txt"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toBottomOf="@+id/medications" />
 
     <TextView
         android:id="@+id/medications"
@@ -72,9 +71,8 @@
         android:text="Medications"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_age_text" />
 
 
@@ -107,24 +105,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.20" />
+        app:layout_constraintGuide_percent="0.60" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horiz_70"
+        android:id="@+id/guideline_horiz_85"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70" />
+        app:layout_constraintGuide_percent="0.90" />
 
     <ListView
         android:id="@+id/senior_profile_notif_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
         android:background="@drawable/rounded"
-        android:text="TextView"
         android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horiz_70"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horiz_85"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
         app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_notif_title_txt" />
