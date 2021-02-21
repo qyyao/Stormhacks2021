@@ -25,8 +25,10 @@ public class SeniorRegistrationPage extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("INSIDE SUBMIT BTN");
                 Senior senior = new Senior(firstName.toString(), lastName.toString());
                 appManager.setCurrentSenior(senior);
+                appManager.setFirstRun(false);
                 startActivity(new Intent(SeniorRegistrationPage.this, Home.class));
             }
         });

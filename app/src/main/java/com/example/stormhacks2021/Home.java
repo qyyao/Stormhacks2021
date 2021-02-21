@@ -16,13 +16,13 @@ public class Home extends AppCompatActivity {
 
         //TO DO: SET THAT IF USER HAS NO PROFILE, SHOW REGISTRATION PAGE
 //        Boolean isFirstRun = //CHECK IF PROFILE EXISTS
-//
-//        if (isFirstRun) {
-//            //show sign up activity
-              startActivity(new Intent(Home.this, RegistrationPage.class));
-//        }
-
         appManager = AppManager.getInstance();
+
+        if (appManager.isFirstRun()) {
+          //show sign up activity
+              startActivity(new Intent(Home.this, RegistrationPage.class));
+        }
+
 
 
 //        CareGiver sue = new CareGiver("Sue", "Lan");
