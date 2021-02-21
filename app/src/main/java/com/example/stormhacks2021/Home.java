@@ -6,13 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.example.stormhacks2021.homepage.ContactActivity;
 import com.example.stormhacks2021.homepage.HelpActivity;
 import com.example.stormhacks2021.homepage.MedicationActivity;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Home extends AppCompatActivity {
 
     private AppManager appManager;
+    private int hour;
+    private String greeting;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,30 @@ public class Home extends AppCompatActivity {
           //show sign up activity
               startActivity(new Intent(Home.this, RegistrationPage.class));
         }
+
+        TextView greetingText = findViewById(R.id.home_greeting_txt);
+
+        Calendar rightNow = Calendar.getInstance();
+        hour = rightNow.get(Calendar.HOUR_OF_DAY);
+
+        if (hour > 0 && hour <= 6){
+            greeting = "Good Night";
+        }
+
+        if (hour > 6 && hour <= 12){
+            greeting = "Good Morning";
+        }
+
+        if (hour > 12 && hour <= 18){
+            greeting = "Good Afternoon";
+        }
+
+        if (hour > 18){
+            greeting = "Good Evening";
+        }
+
+        greetingText.setText(greeting);
+
 
         setUpHelpBtn();
         setUpMedicationBtn();
