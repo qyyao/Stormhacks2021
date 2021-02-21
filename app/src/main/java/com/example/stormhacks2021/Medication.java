@@ -29,8 +29,6 @@ public class Medication { // for medication reminder
     int frequency;
     boolean ifTaken;
 
-
-
     //The basic settings set a medication type, if not specified, to self-administered as needed
     Medication() {
         //DNC = do not crush
@@ -141,4 +139,13 @@ public class Medication { // for medication reminder
     public void setFrequency(int frequency) {
         this.frequency = frequency;
     }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
 }

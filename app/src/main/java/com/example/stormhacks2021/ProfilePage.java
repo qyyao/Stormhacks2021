@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ProfilePage extends AppCompatActivity {
 
     private AppManager appManager;
@@ -42,11 +44,10 @@ public class ProfilePage extends AppCompatActivity {
         String seniorAge = Integer.toString(senior.getAge());
         age.setText(seniorAge);
 
-        ImageView image = findViewById(R.id.senior_profile_picture_image);
-                image.setBackgroundResource(senior.getProfilePicture());
+       ImageView image = (ImageView)findViewById(R.id.circle_img);
+       image.setImageResource(senior.getProfilePicture());
 
         if (senior.getMedicationTracker() != null) {
-
             setAdapter();
         }
         populateNotificationsList();

@@ -42,8 +42,10 @@ public class SeniorRegistrationPage extends AppCompatActivity {
                     Senior senior = new Senior(firstNameString, lastNameString);
                     senior.setAge(Integer.valueOf(ageString));
                     appManager.setCurrentSenior(senior);
+                    appManager.getCurrentSenior().setProfilePicture(R.drawable.pp1);
                     appManager.getSeniors().add(senior);
                     appManager.setFirstRun(false);
+                    appManager.addMedicationsList();
                     startActivity(new Intent(SeniorRegistrationPage.this, Home.class));
                 }
             }
