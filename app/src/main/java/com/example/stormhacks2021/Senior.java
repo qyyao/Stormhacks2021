@@ -7,14 +7,16 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Senior extends User {
 
     int age;
     int profilePicture;
-    Map<String, Boolean> medicationTracker;
+    ArrayList<Medication> medicationTracker;
     boolean tookMedication;
     boolean checkBloodPressure;
     boolean calledFamily;
@@ -45,11 +47,11 @@ public class Senior extends User {
         return profilePicture;
     }
 
-    public void setMedicationTracker(Map<String, Boolean> medicationTracker){
+    public void setMedicationTracker(ArrayList<Medication> medicationTracker){
         this.medicationTracker = medicationTracker;
     }
 
-    public Map<String, Boolean> getMedicationTracker(){
+    public ArrayList<Medication> getMedicationTracker(){
         return medicationTracker;
     }
 

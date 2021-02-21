@@ -27,6 +27,7 @@ public class Medication { // for medication reminder
     boolean SelfAdministered;
     boolean HelpAdminister;
     int frequency;
+    boolean ifTaken;
 
 
 
@@ -43,7 +44,7 @@ public class Medication { // for medication reminder
     }
 
     Medication(String theName, boolean isDNC, boolean isWithFood, boolean isPRN, boolean isSelfAdministered,
-               boolean isHelpAdministered, int theFrequency){
+               boolean isHelpAdministered, int theFrequency, boolean ifTaken){
         Name = theName;
         DNC = isDNC;
         withFood = isWithFood;
@@ -51,6 +52,7 @@ public class Medication { // for medication reminder
         SelfAdministered = isSelfAdministered;
         HelpAdminister = isHelpAdministered;
         frequency = theFrequency;
+        this.ifTaken = ifTaken;
     }
 
     Medication(String theName, boolean isDNC, boolean isWithFood, boolean isPRN, boolean isSelfAdministered,
@@ -81,11 +83,17 @@ public class Medication { // for medication reminder
                 || theFrequency.equals("Q.I.D") || theFrequency.equals("q.i.d")) {
             frequency = 4;
         }
-
-
     }
 
     //----------Getters & Setters-----------//
+    public void setIfTaken(Boolean ifTaken){
+        this.ifTaken = ifTaken;
+    }
+
+    public boolean getIfTaken(){
+        return ifTaken;
+    }
+
     public boolean isDNC() {
         return DNC;
     }

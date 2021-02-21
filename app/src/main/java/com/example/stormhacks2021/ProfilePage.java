@@ -1,6 +1,9 @@
 package com.example.stormhacks2021;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,20 +12,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class SeniorProfilePage extends AppCompatActivity {
+public class ProfilePage extends AppCompatActivity {
 
     private AppManager appManager;
+    private RecyclerView medicineRecyclerView;
+    private Senior senior;
+
     private ArrayAdapter<String> notificationsAdapter;
-    public static final String EXTRA_SENIOR_PROFILE = "selected_senior_position";
     int patientPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_senior_profile_page);
+        medicineRecyclerView = findViewById(R.id.medication_recycler_view);
 
         appManager = AppManager.getInstance();
-        Senior senior;
 
         Intent intent = getIntent();
         patientPosition = intent.getIntExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), -1);
@@ -40,7 +45,18 @@ public class SeniorProfilePage extends AppCompatActivity {
         ImageView image = findViewById(R.id.senior_profile_picture_image);
         image.setBackgroundResource(senior.getProfilePicture());
 
+        if (senior.getMedicationTracker() != null) {
+            setAdapter();
+        }
         populateNotificationsList();
+    }
+
+    private void setAdapter() {
+        ProfileMedicationRecyclerAdapter medicineRecyclerAdapter = new ProfileMedicationRecyclerAdapter(senior.getMedicationTracker());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        medicineRecyclerView.setLayoutManager(layoutManager);
+        medicineRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        medicineRecyclerView.setAdapter(medicineRecyclerAdapter);
     }
 
     private void populateNotificationsList() {

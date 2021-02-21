@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeniorProfilePage"
+    tools:context=".ProfilePage"
     android:background="@drawable/background_senior_profile">
 
     <TextView
@@ -54,9 +54,9 @@
         app:layout_constraintTop_toBottomOf="@+id/senior_profile_picture_image" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="77dp"
+        android:id="@+id/medication_recycler_view"
+        android:layout_width="413dp"
+        android:layout_height="106dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/senior_profile_notif_title_txt"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"

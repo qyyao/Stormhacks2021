@@ -7,11 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.v4.os.IResultReceiver;
 import android.view.View;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SeniorsListPage extends AppCompatActivity {
@@ -45,7 +42,7 @@ public class SeniorsListPage extends AppCompatActivity {
         listener = new SeniorRecyclerAdapter.SeniorRecyclerViewClickListener(){
             @Override
             public void onClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(), SeniorProfilePage.class);
+                Intent intent = new Intent(getApplicationContext(), ProfilePage.class);
                 intent.putExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), position);
                 startActivity(intent);
             }
