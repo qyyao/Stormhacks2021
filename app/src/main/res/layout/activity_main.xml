@@ -26,7 +26,7 @@
         android:paddingRight="20dp"
         android:text="Notifications"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="25sp"
+        android:textSize="23sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_horiz_20"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
         app:layout_constraintHorizontal_bias="0.0"
