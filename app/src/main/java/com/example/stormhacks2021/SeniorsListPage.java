@@ -20,7 +20,6 @@ public class SeniorsListPage extends AppCompatActivity {
     private List<Senior> seniorsList;
     private RecyclerView seniorRecyclerView;
     private SeniorRecyclerAdapter.SeniorRecyclerViewClickListener listener;
-    public static final String EXTRA_SENIOR_PROFILE = "selected_senior_position";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class SeniorsListPage extends AppCompatActivity {
             @Override
             public void onClick(View v, int position) {
                 Intent intent = new Intent(getApplicationContext(), SeniorProfilePage.class);
-                intent.putExtra(EXTRA_SENIOR_PROFILE, position);
+                intent.putExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), position);
                 startActivity(intent);
             }
         };

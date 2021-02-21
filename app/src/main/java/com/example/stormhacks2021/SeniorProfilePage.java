@@ -22,7 +22,7 @@ public class SeniorProfilePage extends AppCompatActivity {
         String seniorName = "invalid profile";
 
         Intent intent = getIntent();
-        int patientPosition = intent.getIntExtra(EXTRA_SENIOR_PROFILE, -1);
+        int patientPosition = intent.getIntExtra(getResources().getString(R.string.SENIOR_PROFILE_POSITION), -1);
 
         if (patientPosition != -1){
             seniorName = appManager.getSeniors().get(patientPosition).getFirstName() + " " + appManager.getSeniors().get(patientPosition).getLastName();
