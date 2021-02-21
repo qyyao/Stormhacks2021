@@ -43,6 +43,7 @@ public class HelpActivity extends AppCompatActivity {
         Button thirstyButton = findViewById(R.id.help_thirsty_btn);
         Button lonelyButton = findViewById(R.id.help_lonely_btn);
         Button injuredButton = findViewById(R.id.help_injury_btn);
+        Button washroomButton = findViewById(R.id.help_washroom_btn);
 
         hungryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,6 +172,45 @@ public class HelpActivity extends AppCompatActivity {
                 builder.setContentTitle("Alert!");
                 String name = appManager.getCurrentSenior().getFirstName();
                 builder.setContentTitle(name + " is injured!");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(HelpActivity.this);
+                managerCompat.notify(1,builder.build());
+                //Notification Code Complete
+                alertDialog.setTitle("Help is on the way!");
+
+                alertDialog.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(false);
+                        finish();
+                    }
+                });
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                AlertDialog alertDialog1 = alertDialog.create();
+                alertDialog1.show();
+
+            }
+        });
+
+
+        washroomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                appManager.getCurrentSenior().notifyCareGiver(appManager.getCurrentSenior().getFirstName() + " needs washroom");
+
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HelpActivity.this);
+                //Notification Code Below
+                NotificationCompat.Builder builder=new NotificationCompat.Builder(HelpActivity.this, "My Notification");
+                builder.setContentTitle("Alert!");
+                String name = appManager.getCurrentSenior().getFirstName();
+                builder.setContentTitle(name + " needs washroom!");
                 builder.setSmallIcon(R.drawable.ic_launcher_background);
                 builder.setAutoCancel(true);
 
