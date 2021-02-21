@@ -4,6 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_neutral"
     tools:context=".homepage.HelpActivity">
+
+    <Button
+        android:id="@+id/help_hungry_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'M HUNGRY"
+        android:textSize="20sp"
+        app:backgroundTint="#2F80EC"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horiz_20" />
+
+    <Button
+        android:id="@+id/help_thirsty_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="I'M THIRSTY"
+        android:textSize="20sp"
+        app:backgroundTint="#2F80EC"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toBottomOf="@+id/help_hungry_btn" />
+
+    <Button
+        android:id="@+id/help_injury_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="I'M INJURED"
+        android:textSize="20sp"
+        app:backgroundTint="#2F80EC"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toBottomOf="@+id/help_lonely_btn" />
+
+    <Button
+        android:id="@+id/help_lonely_btn"
+        android:layout_width="161dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="I'M LONELY"
+        android:textSize="20sp"
+        app:backgroundTint="#2F80EC"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vert_80"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vert_20"
+        app:layout_constraintTop_toBottomOf="@+id/help_thirsty_btn" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horiz_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

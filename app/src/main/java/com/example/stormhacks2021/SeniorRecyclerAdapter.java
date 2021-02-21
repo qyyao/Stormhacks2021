@@ -25,10 +25,12 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView seniorName;
+        private TextView notificationsNumber;
 
         public MyViewHolder(final View view){
             super(view);
             seniorName = view.findViewById(R.id.senior_name_text);
+            notificationsNumber = view.findViewById(R.id.senior_notif_number_txt);
             view.setOnClickListener(this);
         }
 
@@ -48,7 +50,11 @@ public class SeniorRecyclerAdapter extends RecyclerView.Adapter<SeniorRecyclerAd
     @Override
     public void onBindViewHolder(@NonNull SeniorRecyclerAdapter.MyViewHolder holder, int position) {
         String name = seniorsList.get(position).getFirstName() + " " + seniorsList.get(position).getLastName();
+        String notifNumber = String.valueOf(seniorsList.get(position).getNumNotifications());
         holder.seniorName.setText(name);
+        if(seniorsList.get(position).getNumNotifications() > 0){
+            holder.notificationsNumber.setText(notifNumber);
+        }
     }
 
     @Override

@@ -15,8 +15,6 @@ import com.example.stormhacks2021.homepage.HelpActivity;
 import com.example.stormhacks2021.homepage.MedicationActivity;
 import com.example.stormhacks2021.homepage.SettingsActivity;
 
-import java.sql.SQLOutput;
-
 public class Home extends AppCompatActivity {
 
     private AppManager appManager;
