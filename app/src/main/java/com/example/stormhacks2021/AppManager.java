@@ -1,5 +1,11 @@
 package com.example.stormhacks2021;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,24 +19,53 @@ public class AppManager {
     private boolean isFirstRun;
 
     private AppManager(){
-        seniors = new ArrayList<>();
 
-        seniors.add(new Senior("John1", "Smith1"));
-        seniors.add(new Senior("John2", "Smith2"));
-        seniors.add(new Senior("John3", "Smith3"));
-        seniors.add(new Senior("John4", "Smith4"));
-        seniors.add(new Senior("John5", "Smith5"));
-        seniors.add(new Senior("John6", "Smith6"));
-        seniors.add(new Senior("John7", "Smith7"));
-        seniors.add(new Senior("John8", "Smith8"));
-        seniors.add(new Senior("John9", "Smith9"));
-        seniors.add(new Senior("John10", "Smith10"));
+        setSeniorList();
 
         if(instance != null){
             isFirstRun = false;
         }else{
             isFirstRun = true;
         }
+    }
+
+    private void setSeniorList() {
+        seniors = new ArrayList<>();
+        seniors.add(new Senior("Adam", "Apple"));
+        seniors.get(0).setAge(65);
+        seniors.get(0).setProfilePicture(R.drawable.pp1);
+
+        seniors.add(new Senior("Mary", "Jane"));
+        seniors.get(1).setAge(54);
+        seniors.get(1).setProfilePicture(R.drawable.pp2);
+
+        seniors.add(new Senior("Tobey", "James"));
+        seniors.get(2).setAge(76);
+        seniors.get(2).setProfilePicture(R.drawable.pp3);
+
+        seniors.add(new Senior("Zack", "Jack"));
+        seniors.get(3).setAge(90);
+        seniors.get(3).setProfilePicture(R.drawable.pp4);
+
+        seniors.add(new Senior("Five", "Hargreeves"));
+        seniors.get(4).setAge(58);
+        seniors.get(4).setProfilePicture(R.drawable.pp5);
+
+        seniors.add(new Senior("Diego", "Alexandro"));
+        seniors.get(5).setAge(67);
+        seniors.get(5).setProfilePicture(R.drawable.pp6);
+
+        seniors.add(new Senior("May", "June"));
+        seniors.get(6).setAge(97);
+        seniors.get(6).setProfilePicture(R.drawable.pp7);
+
+        seniors.add(new Senior("June", "July"));
+        seniors.get(7).setAge(76);
+        seniors.get(7).setProfilePicture(R.drawable.pp8);
+
+        seniors.add(new Senior("Alexandra", "Smith"));
+        seniors.get(8).setAge(66);
+        seniors.get(8).setProfilePicture(R.drawable.pp9);
     }
 
     public static AppManager getInstance(){

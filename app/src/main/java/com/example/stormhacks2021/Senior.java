@@ -3,9 +3,18 @@ package com.example.stormhacks2021;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.widget.ImageView;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Senior extends User {
 
-    int medicationCounter;
+    int age;
+    int profilePicture;
+    Map<String, Boolean> medicationTracker;
     boolean tookMedication;
     boolean checkBloodPressure;
     boolean calledFamily;
@@ -20,20 +29,28 @@ public class Senior extends User {
         careGiverNotifications = new ArrayList<>();
     }
 
-    public int getMedicationCounter() {
-        return medicationCounter;
+    public void setAge(int age){
+        this.age = age;
     }
 
-    public void setMedicationCounter(int medicationCounter) {
-        this.medicationCounter = medicationCounter;
+    public int getAge(){
+        return age;
+    };
+
+    public void setProfilePicture(int profilePicture){
+        this.profilePicture = profilePicture;
     }
 
-    public boolean isTookMedication() {
-        return tookMedication;
+    public int getProfilePicture(){
+        return profilePicture;
     }
 
-    public void setTookMedication(boolean tookMedication) {
-        this.tookMedication = tookMedication;
+    public void setMedicationTracker(Map<String, Boolean> medicationTracker){
+        this.medicationTracker = medicationTracker;
+    }
+
+    public Map<String, Boolean> getMedicationTracker(){
+        return medicationTracker;
     }
 
     public boolean isCheckBloodPressure() {

@@ -6,4 +6,5 @@
     <string name="home_medication_txt">I took my medication</string>
     <string name="home_help_txt">I need help!</string>
     <string name="SENIOR_PROFILE_POSITION">selected_senior_position</string>
+    <string name="contact_list">Contact List</string>
 </resources>
