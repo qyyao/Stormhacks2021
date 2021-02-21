@@ -45,7 +45,7 @@ public class SeniorRegistrationPage extends AppCompatActivity {
                     appManager.getCurrentSenior().setProfilePicture(R.drawable.pp1);
                     appManager.getSeniors().add(senior);
                     appManager.setFirstRun(false);
-                    appManager.addMedicationsList();
+                    appManager.addMedicationsToCurrentSenior();
                     startActivity(new Intent(SeniorRegistrationPage.this, Home.class));
                 }
             }

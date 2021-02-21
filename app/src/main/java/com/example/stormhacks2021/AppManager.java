@@ -18,6 +18,7 @@ public class AppManager {
     private static CareGiver mainCareGiver;
     private List<String> careGiverNotifications;
     private boolean isFirstRun;
+    ArrayList<Medication> medications0;
 
     private AppManager(){
 
@@ -36,39 +37,53 @@ public class AppManager {
         seniors.add(new Senior("Adam", "Apple"));
         seniors.get(0).setAge(65);
         seniors.get(0).setProfilePicture(R.drawable.pp1);
+        seniors.get(0).setMedicationTracker(medications0);
+        seniors.get(0).notifyCareGiver(seniors.get(0).getFirstName() + " is thirsty");
 
         seniors.add(new Senior("Mary", "Jane"));
         seniors.get(1).setAge(54);
         seniors.get(1).setProfilePicture(R.drawable.pp2);
+        seniors.get(1).setMedicationTracker(medications0);
+        seniors.get(1).notifyCareGiver(seniors.get(1).getFirstName() + " is hungry");
+        seniors.get(1).notifyCareGiver(seniors.get(1).getFirstName() + " is thirsty");
+        seniors.get(1).notifyCareGiver(seniors.get(1).getFirstName() + " is lonely");
 
         seniors.add(new Senior("Tobey", "James"));
         seniors.get(2).setAge(76);
         seniors.get(2).setProfilePicture(R.drawable.pp3);
+        seniors.get(2).setMedicationTracker(medications0);
 
         seniors.add(new Senior("Zack", "Jack"));
         seniors.get(3).setAge(90);
         seniors.get(3).setProfilePicture(R.drawable.pp4);
+        seniors.get(3).setMedicationTracker(medications0);
 
         seniors.add(new Senior("Five", "Hargreeves"));
         seniors.get(4).setAge(58);
         seniors.get(4).setProfilePicture(R.drawable.pp5);
+        seniors.get(4).setMedicationTracker(medications0);
 
         seniors.add(new Senior("Diego", "Alexandro"));
         seniors.get(5).setAge(67);
         seniors.get(5).setProfilePicture(R.drawable.pp6);
+        seniors.get(5).setMedicationTracker(medications0);
 
         seniors.add(new Senior("May", "June"));
         seniors.get(6).setAge(97);
         seniors.get(6).setProfilePicture(R.drawable.pp7);
+        seniors.get(6).setMedicationTracker(medications0);
+        seniors.get(6).notifyCareGiver(seniors.get(6).getFirstName() + " is hungry");
+        seniors.get(6).notifyCareGiver(seniors.get(6).getFirstName() + " is thirsty");
 
         seniors.add(new Senior("June", "July"));
         seniors.get(7).setAge(76);
         seniors.get(7).setProfilePicture(R.drawable.pp8);
+        seniors.get(7).setMedicationTracker(medications0);
 
         seniors.add(new Senior("Alexandra", "Smith"));
         seniors.get(8).setAge(66);
         seniors.get(8).setProfilePicture(R.drawable.pp9);
-
+        seniors.get(8).setMedicationTracker(medications0);
     }
 
     public static AppManager getInstance(){
@@ -81,12 +96,15 @@ public class AppManager {
     }
 
     public void addMedicationsList() {
-        ArrayList<Medication> medications0 = new ArrayList<>();
+        medications0 = new ArrayList<>();
         medications0.add(new Medication("Aspirin", false, false, false, false, false, 4, false ));
         medications0.add(new Medication("Sertraline", false, false, false, false, false, 4, true ));
         medications0.add(new Medication("Insulin", false, false, false, false, false, 4, false ));
         medications0.add(new Medication("Seroquel", false, false, false, false, false, 4, false ));
         medications0.add(new Medication("Nasal Drops", false, false, false, false, false, 4, false ));
+    }
+
+    public void addMedicationsToCurrentSenior(){
         currentSenior.setMedicationTracker(medications0);
     }
 

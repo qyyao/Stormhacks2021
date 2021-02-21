@@ -29,6 +29,18 @@ public class SeniorsListPage extends AppCompatActivity {
         setAdapter();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setAdapter();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setAdapter();
+    }
+
     private void setAdapter(){
         setOnClickListener();
         SeniorRecyclerAdapter seniorRecyclerAdapter = new SeniorRecyclerAdapter(seniorsList, listener);
